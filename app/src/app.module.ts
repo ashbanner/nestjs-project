@@ -5,6 +5,7 @@ import { TruckDriverModule } from './app-modules/truck-driver/truck-driver.modul
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TruckDriver } from './entities/truck-driver.entity';
 import { TruckDriver1686511615395 } from './migrations/1686511615395-truck-driver';
+import { TruckModule } from './app-modules/truck/truck.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { TruckDriver1686511615395 } from './migrations/1686511615395-truck-drive
       migrationsRun: true,
     }),
     TruckDriverModule,
+    TruckModule,
   ],
   controllers: [AppController],
   providers: [AppService],
