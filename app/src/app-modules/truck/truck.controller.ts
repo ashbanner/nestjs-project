@@ -53,7 +53,7 @@ export class TruckController {
   }
 
   @Delete('/:id')
-  async deleteTruckDriver(@Param('id') id: string) {
+  async deleteTruck(@Param('id') id: string) {
     const deleteTruckCommand = new DeleteTruckCommand();
     deleteTruckCommand.id = id;
     return await this.commandBus.execute(deleteTruckCommand);
