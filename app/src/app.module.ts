@@ -11,19 +11,23 @@ import { Truck } from './entities/truck.entity';
 import { ScheduleModule } from './app-modules/schedule/schedule.module';
 import { Schedule } from './entities/schedule.entity';
 import { Schedule1686782510996 } from './migrations/1686782510996-schedule';
+import { AssignmentModule } from './app-modules/assignment/assignment.module';
+import { Assignment } from './entities/assignment.entity';
+import { Assignment1686793631648 } from './migrations/1686793631648-assignment';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([TruckDriver, Truck]),
+    TypeOrmModule.forFeature([TruckDriver, Truck, Schedule, Assignment]),
     TypeOrmModule.forRoot({
       type: 'postgres',
       url: process.env.DATABASE_URL,
       synchronize: false,
-      entities: [TruckDriver, Truck, Schedule],
+      entities: [TruckDriver, Truck, Schedule, Assignment],
       migrations: [
         TruckDriver1686511615395,
         Truck1686544948606,
         Schedule1686782510996,
+        Assignment1686793631648,
       ],
       migrationsTableName: 'migrations',
       migrationsRun: true,
@@ -31,6 +35,7 @@ import { Schedule1686782510996 } from './migrations/1686782510996-schedule';
     TruckDriverModule,
     TruckModule,
     ScheduleModule,
+    AssignmentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
