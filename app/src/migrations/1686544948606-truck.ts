@@ -6,7 +6,7 @@ export class Truck1686544948606 implements MigrationInterface {
         CREATE TABLE IF NOT EXISTS "truck" (
             "id" character varying(255) PRIMARY KEY,
             "isElectric" boolean NOT NULL,
-            "isCompanyOwned" boolean NOT NULL,
+            "isCompanyOwned" boolean NOT NULL
         );
         `);
   }
